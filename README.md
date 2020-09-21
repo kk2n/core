@@ -1,6 +1,6 @@
-# react hooks useModel 核心代码
+# React hooks useModel 核心代码，使用太简单了，彻底放弃Reduex，是你的工作效率，成倍的提高，从此告别无意义的加班
 
-### core之usemodel库
+### React core 之 usemodel库
 
 # 基本用法
 
@@ -13,9 +13,7 @@ model({
   API,
   namespace: 'Demo',
   kk2n: 1,
-  bb: 'a',
   getList: 'get /biz/auth/detail/staff',
-  t: false
 })
 ```
 
