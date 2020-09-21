@@ -17,9 +17,7 @@ model({
   kk2n: 1,
   getList: 'get /biz/auth/detail/staff',
 })
-```
 
-```
 //使用方法
 function Demo() {
   let m = useModel('Demo')
