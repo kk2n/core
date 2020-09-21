@@ -60,5 +60,18 @@ API：请求方法，如axios,fetch等等
 
 kk2n：为该空间内的变量，也就是在这设置页面上状态的初始值，一旦声明，该model对象(称为：m)，即可出现 m.kk2n状态和 m.kk2nUp(newValue)更新该状态的方法，入参为新的值。
 
-getList：为该空间内的异步请求方法，通常值以"get /db/api","post /db/api","请求方法 请求url"，一旦声明，即可出现m.getList({id:1})方法，参数为该请求方法的请求入参，以及，该方法请求后的请求结果：m.getListRes,该对象有三个值：data,code,msg，也就是接口返回结果
+getList：为该空间内的异步请求方法，通常值以"get /db/api","post /db/api","请求方法 请求url"，一旦声明，即可出现m.getList({id:1})方法，参数为该请求方法的请求入参，以及，该方法请求后的请求结果：m.getListRes,该对象有三个值：data,code,msg，对应接口返回结果。
 
+### 特别说明：
+update：如果同时需要更新多个状态，你可使用
+```
+m.update({
+  kk2n:11,
+  kk3n:22
+})
+```
+
+
+掌握以上，你就掌握全部...
+
+从此，开始，新的快乐生活吧...
