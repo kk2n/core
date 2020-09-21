@@ -1,6 +1,6 @@
-# React hooks useModel 核心代码，使用太简单了，彻底放弃Reduex，是你的工作效率，成倍的提高，从此告别无意义的加班
+# React hooks useModel 核心代码
 
-### React core 之 usemodel库
+### React core 之 usemodel库，使用太简单了，彻底放弃Reduex，是你的工作效率，成倍的提高，从此告别无意义的加班！
 
 # 基本用法
 
