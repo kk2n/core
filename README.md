@@ -49,7 +49,10 @@ export default function Demo() {
 }
 ```
 
-# API只有两个: 【Model】声明model对象，【usemodel】，使用model对象
+##### API只有两个: 
+【Model】声明model对象，  
+【usemodel】，使用model对象
+
 
 # Model： 该函数具体使用方法说明：
 ### 页面执行直接：Model(params);
@@ -65,15 +68,19 @@ export default function Demo() {
   }
 }
 ```
-namespace：命名空间
 
-API：请求方法，如axios,fetch等等
+### 说明
 
-kk2n：值为字符时，为定义的状态，也就是设置页面上状态的初始值，一旦声明，该model对象(称为：m)，即可出现 m.kk2n状态和 m.kk2nUp(newValue)更新该状态的方法，入参为新的值。
+【namespace】：命名空间  
+【API】：请求方法，如axios,fetch等等  
 
-getList：值为"get "开头的字符时,为该空间内的异步请求方法，通常值以"get /db/api","post /db/api","请求方法 请求url"，一旦声明，即可出现m.getList({id:1})方法，参数为该请求方法的请求入参，以及，该方法请求后的请求结果：m.getListRes,该对象有三个值：data,code,msg，对应接口返回结果。
+###### 以上两个为固定值，其他均为【状态】和【方法】  
+【kk2n】：值为字符时，为状态的初始值,声明后,该model对象(称为：m)，即可出现 m.kk2n状态和更新状态的方法 m.kk2nUp(newValue)，入参为新值。
+  
+【getList】：值为"get post"开头的字符时,为异步请求方法，例如："get /db/api","post /db/api",声明后，即可出现m.getList({id:1})方法，参数为请求方法的入参。并且，携带上请求结果：m.getListRes,结果有三个值：data,code,msg对应着接口返回值。  
 
-reset：值为函数时，为自定义model的方法，可以在Model里定义，改变状态了
+【reset】：值为函数时，为model的方法，可以在方法改变其他状态。  
+
 
 ### 特别说明：
 【第1点】：update：如果同时需要更新多个状态，你可使用
@@ -83,12 +90,38 @@ m.update({
   kk3n:22
 })
 ```
-【第2点】：支持跨模块调用
-你可以在其他页面，调用不至于自己的Model，
+【第2点】：Model的状态和方法支持跨模块调用，你可以把它视为全局的store。
 
-例如：在B页面上，可使用 let demoModel=useMdel('Demo')，调用Demo页面的状态。
+例如： 
+```
 
-### 但通常不建议这样使用，因为如果你的系统对页面有权限控制，如Demo本权限控制而没有出现，那么B页面就会出现未知错误，请自行组织好您的页面关系，可多使用容器组件和木偶组件的数据传输原则
+//自己的model
+let m = useMdel('BPageDemo')
+//其他模块的model
+let mDemo = useMdel('Demo')
+
+//这样，你就能在B页面使用Demo页面的状态和调用方法了
+<a onClick={ () => mDemo.kk2nUp(2) }> { mDemo.kk2n } </a> 
+
+```
+
+###### 但通常不建议这样使用，因为如果你的系统对页面有权限控制，如Demo本权限控制而没有出现，那么B页面就会出现未知错误，请自行组织好您的页面关系，可多使用容器组件和木偶组件的数据传输原则
 
 掌握以上，你就掌握全部...
 从此，开始，新的快乐生活吧...
+
+
+
+### 【其他文档】
+
+[1.useAPI使用方法 ](https://github.com/kk2n/core)
+
+[2.useAsync使用方法 ](https://github.com/kk2n/core)
+
+[3.useFetch使用方法 ](https://github.com/kk2n/core)
+
+[4.useModel使用方法 ](https://github.com/kk2n/core)
+
+[5.useToggle使用方法 ](https://github.com/kk2n/core)
+
+[6.createModel使用方法 ](https://github.com/kk2n/core)
