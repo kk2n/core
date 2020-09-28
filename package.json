@@ -51,7 +51,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@www.yimigit.com:22876/yimi_fe/corelib/ymCore.git"
+    "url": "https://github.com/kk2n/core"
   },
   "keywords": [
     "env"
